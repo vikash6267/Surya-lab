@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Footer from '../components/common/Footer';
 import AOS from "aos";
 import 'aos/dist/aos.css';
-
+import AppointmentModal from '../components/common/BookApoiment';
 export const sizes = ["S", "M", "L", "XL", "XXL"];
 export const genders = ["Male", "Female", "Unisex"];
 
@@ -107,6 +107,14 @@ function AllProduct({ products }) {
             </div>
           </div>
         </div>
+        {
+  isOpen && 
+  <AppointmentModal
+        isOpen={isOpen}
+        closeModal={()=>setIsOpen(false)}
+       
+      />
+}
       </div>
       <Footer />
     </>
