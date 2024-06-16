@@ -107,8 +107,8 @@ function Navbar({ isOpen, setIsOpen }) {
 
   ))}
   {
-  user?.accountType === "Admin" &&
-  <Link
+  user?.accountType === "Admin" ?
+(  <Link
         to="admin/dashboard/all-product"
         onClick={() => dispatch(setIsOpen(false))}
         className="font-semibold flex items-center gap-2 hover:text-blue-600"
@@ -116,7 +116,15 @@ function Navbar({ isOpen, setIsOpen }) {
       >
        Dashboard
       
-      </Link>
+      </Link>) : 
+      (  <Link
+        to="login"
+        className=" transition-colors duration-300 hover:text-blue-600 border-b-2 border-gray-300 text-lg py-1"
+        data-aos="fade-up" data-aos-delay="100"
+      >
+       Admin Login
+      
+      </Link>)
 }
 </ul>
 

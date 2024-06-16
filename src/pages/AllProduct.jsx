@@ -42,8 +42,8 @@ function AllProduct({ products }) {
       <div className="min-h-screen mt-[60px] min-w-[100vw] mx-auto mb-[100px]">
         <h2 className='text-center font-bold text-2xl'>All Tests</h2>
         <div className='min-h-full'>
-          <div className="flex justify-center my-4 items-center gap-2">
-           <label htmlFor=""  className=' font-bold text-xl'>Search Test</label>
+          <div className="flex justify-center my-4 items-center gap-2 w-11/12 mx-auto">
+           <label htmlFor=""  className=' font-bold lg:text-xl text-[10px]'>Search Test</label>
             <input
               type="text"
               placeholder="Search by Test Name or Organ..."

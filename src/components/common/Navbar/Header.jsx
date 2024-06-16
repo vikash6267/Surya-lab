@@ -36,7 +36,7 @@ function Header() {
                     className=" relative top-0"
                     width={120}/> */}
 
-                    Surya Diagnostics Lab
+                    Surya Diagnostics 
               </div>
             </Link>
           </div>

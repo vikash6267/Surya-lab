@@ -1,6 +1,6 @@
 // const BASE_URL = process.env.REACT_APP_BASE_URL
-// const BASE_URL = "https://home-decor-e-commerce.onrender.com/api/v1"
-const BASE_URL = "https://surya-lab-e2d1.onrender.com"
+
+const BASE_URL = "https://surya-lab-e2d1.onrender.com/api/v1"
 
 // ??USER APIS
 export const userEndpoints = {
