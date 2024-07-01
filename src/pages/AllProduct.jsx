@@ -33,7 +33,7 @@ function AllProduct({ products }) {
     const searchTermLower = searchTerm.toLowerCase();
     return (
       product.title.toLowerCase().includes(searchTermLower) ||
-      product.organ.toLowerCase().includes(searchTermLower)
+      product?.organ?.toLowerCase().includes(searchTermLower)
     );
   });
 
@@ -77,18 +77,27 @@ function AllProduct({ products }) {
                               <p className="font-montserrat lg:text-base text-[12px] text-gray-900 font-bold">
                                 {displayMoney(product.mrp)}
                               </p>
+                              {
+                                product.highPrice &&
                               <del className="font-montserrat text-sm text-gray-600">
                                 {displayMoney(product.highPrice)}
                               </del>
+                              }
                             </div>
+
+                            {
+                              product.highPrice &&
                             <p className="text-[#0A7201] ">
                               You Save {displayMoney(product.highPrice - product.mrp)}
                             </p>
+                            }
                           </div>
                           <div className="flex">
+                           { product.highPrice &&
                             <p className="font-montserrat text-base text-green-600 font-bold bg-green-200 p-2 rounded-xl mt-4">
                               {calculateDiscount(product.highPrice, product.mrp)}% OFF
                             </p>
+                           }
                           </div>
                         </div>
                         <div className="flex justify-center items-center lg:h-24 lg:text-base text-[12px]">

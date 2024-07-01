@@ -30,31 +30,36 @@ function TestSlide({ products }) {
         <div className={`grid lg:grid-cols-4 lg:px-6 gap-2 sm:grid-cols-2 md:grid-cols-3 grid-cols-2 `} >
                     {displayedProducts.map((product) => (
                       <div
-                        key={product._id}
+                        key={product?._id}
                         className=" mx-2 mb-6 flex flex-col rounded-lg shadow-lg bg-white overflow-hidden transition p-2 duration-300 transform border-black border-[1px]"
                         style={{ textDecoration: 'none' }}
                       >
                         <div className="lg:p-4 md:p-4 p-1">
                           <p className="font-montserrat lg:text-lg text-sm font-bold mb-2 lg:min-h-[52px]">
-                            {product.title}
+                            {product?.title}
                           </p>
                           <div className="min-h-[50px]">
                             <div className="flex justify-between">
                               <p className="font-montserrat lg:text-base text-[12px] text-gray-900 font-bold">
-                                {displayMoney(product.mrp)}
+                                {displayMoney(product?.mrp)}
                               </p>
+                              {
+                                product.highPrice &&
                               <del className="font-montserrat text-sm text-gray-600">
                                 {displayMoney(product.highPrice)}
                               </del>
+                              }
                             </div>
-                            <p className="text-[#0A7201] ">
-                              You Save {displayMoney(product.highPrice - product.mrp)}
+                           {
+                            product?.highPrice &&  <p className="text-[#0A7201] ">
+                            You Save {displayMoney(product?.highPrice - product?.mrp)}
                             </p>
+                           }
                           </div>
                           <div className="flex">
-                            <p className="font-montserrat text-base text-green-600 font-bold bg-green-200 p-2 rounded-xl mt-4">
-                              {calculateDiscount(product.highPrice, product.mrp)}% OFF
-                            </p>
+                           {  product?.highPrice && <p className="font-montserrat text-base text-green-600 font-bold bg-green-200 p-2 rounded-xl mt-4">
+                              {calculateDiscount(product?.highPrice, product?.mrp)}% OFF
+                            </p>}
                           </div>
                         </div>
                         <div className="flex justify-center items-center lg:h-24 lg:text-base text-[12px]">

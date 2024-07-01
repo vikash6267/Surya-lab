@@ -8,12 +8,12 @@ const productSchema = new mongoose.Schema(
       required: true,
       trim: true,
   },
-  slug: {
-      type: String,
-      required: true,
-      unique: true,
-      lowercase: true,
-  },
+  // slug: {
+  //     type: String,
+  //     required: true,
+  //     unique: true,
+  //     lowercase: true,
+  // },
   description: {
       type: String,
   },
@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema(
   },
   highPrice: {
       type: Number,
-      required: true,
+    //   required: true,
   },
   mrp: {
       type: Number,
@@ -33,26 +33,26 @@ const productSchema = new mongoose.Schema(
 
   organ: {
       type: String,
-      required: true,
+    //   required: true,
   },
   purpose: {
       type: String,
-      required: true,
+    //   required: true,
   },
   sampleType: {
       type: String,
-      required: true,
+      // required: true,
   },
   temp: {
       type: String,
   },
   method: {
       type: String,
-      required: true,
+      // required: true,
   },
   tat: {
       type: String,
-      required: true,
+      // required: true,
   }
  
  

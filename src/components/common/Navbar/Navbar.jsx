@@ -50,10 +50,42 @@ function Navbar({ isOpen, setIsOpen }) {
     dispatch(setIsOpen(false));
   };
 
+
+
+
   useEffect(() => {
-    console.log(isOpen);
+    if (isOpen) {
+      const scrollY = document.documentElement.style.getPropertyValue("--scroll-y");
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}`;
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+
+    // AOS.init({ once: true });
+    AOS.refresh();
     AOS.init({ duration: 800, once: true });
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+    };
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+
+
 
   return (
     <AnimatePresence>
