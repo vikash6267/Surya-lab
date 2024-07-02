@@ -12,7 +12,8 @@ const {errorHandler} = require("./middlewares/errorHandler")
 const imageRoute = require("./routes/imageRoute");
 const productsRoutes = require("./routes/products")
 const userRoutes = require("./routes/userRoutes")
-const Product = require("./models/Product")
+const Product = require("./models/Product");
+const { appointController } = require("./controllers/ContactUs");
 
 dotenv.config();
 
@@ -49,7 +50,7 @@ cloudinaryConnect();
 // Setting up routes
 app.use("/api/v1/product", productsRoutes);
 app.use("/api/v1/user",userRoutes)
-
+app.post("/book",appointController)
 app.use("/api/v1/image", imageRoute);
 
 
