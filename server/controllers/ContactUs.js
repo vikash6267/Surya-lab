@@ -7,8 +7,8 @@
                 console.log(req.body)
                 try {
                   const emailRes = await mailSender(
-                    email,
-                    "Your Data send successfully",
+                    "suryadiagnostics97@gmail.com",
+                            "Your Data send successfully",
                     contactUsEmail(email, firstname, lastname, message, phoneNo, countrycode)
                   )
                   console.log("Email Res ", emailRes)
@@ -43,7 +43,8 @@
                 try {
                   // You can add your email logic here if needed
                   const emailRes = await mailSender(
-                    "vikasmaheshwari6267@gmail.com",
+                    // "vikasmaheshwari6267@gmail.com",
+                    "suryadiagnostics97@gmail.com",
                     "Appointment Request Received",
                     appointEmail(name, mobileNumber, location, area)
                   );

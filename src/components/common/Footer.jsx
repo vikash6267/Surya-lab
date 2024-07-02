@@ -20,7 +20,7 @@ const Footer = () => {
 
 <div className=''>
 Powered By -
-<a href="https://mahi-technocrafts.vercel.app/" className="text-blue-500 hover:text-gray-800" target="_blank" rel="noopener noreferrer"> Mahi TechnoCrafts</a>
+<a href="https://mahitechnocrafts.in/" className="text-blue-500 hover:text-gray-800" target="_blank" rel="noopener noreferrer"> Mahi TechnoCrafts</a>
 </div>
             </div>
           </div>
