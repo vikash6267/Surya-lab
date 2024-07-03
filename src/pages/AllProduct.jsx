@@ -14,6 +14,7 @@ function AllProduct({ products }) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const { allProduct } = useSelector(state => state.product);
+  const[test,setTest] = useState("")
 
   useEffect(() => {
     console.log(allProduct);
@@ -102,7 +103,7 @@ function AllProduct({ products }) {
                         </div>
                         <div className="flex justify-center items-center lg:h-24 lg:text-base text-[12px]">
                           <button
-                            onClick={() => setIsOpen(true)}
+                            onClick={() => {setIsOpen(true) ; setTest(product?.title)}}
                             className="bg-blue-500 hover:bg-blue-600 text-white font-bold lg:py-2 lg:px-4 p-2 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
                           >
                             Book Appointment
@@ -119,6 +120,7 @@ function AllProduct({ products }) {
         {
   isOpen && 
   <AppointmentModal
+  test={test}
         isOpen={isOpen}
         closeModal={()=>setIsOpen(false)}
        

@@ -3,13 +3,13 @@ import { FaCheck } from 'react-icons/fa';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { RiUserFill } from 'react-icons/ri';
 import { MdPhone } from 'react-icons/md';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { apiConnector } from '../../serivces/apiConnector';
 
 
-const AppointmentModal = ({ isOpen, closeModal }) => {
+const AppointmentModal = ({ isOpen, closeModal ,test}) => {
   const [name, setName] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
   const [location, setLocation] = useState('');
@@ -21,11 +21,11 @@ const AppointmentModal = ({ isOpen, closeModal }) => {
     const toastID = toast.loading("Sending Appointment Request");
 
     try {
-      const response = await axios.post('http://localhost:4000/book', {
+      const response = await axios.post('https://surya-lab-e2d1.onrender.com/book', {
         name,
         mobileNumber,
         location,
-        area
+        area,test
       });
 
       if (response.data.success) {
@@ -48,6 +48,10 @@ const AppointmentModal = ({ isOpen, closeModal }) => {
     }
     closeModal();
   };
+
+  useEffect(()=>{
+    console.log(test)
+  },[])
 
   return (
     <div className={`fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center z-50 ${isOpen ? '' : 'hidden'}`}>

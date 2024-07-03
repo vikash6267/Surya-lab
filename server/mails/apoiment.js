@@ -1,4 +1,4 @@
-exports.appointEmail = (name, mobileNumber, location, area) => {
+exports.appointEmail = (name, mobileNumber, location, area,test) => {
     return `<!DOCTYPE html>
     <html>
     <head>
@@ -65,6 +65,7 @@ exports.appointEmail = (name, mobileNumber, location, area) => {
                 <p><strong>Mobile Number:</strong> ${mobileNumber}</p>
                 <p><strong>Location:</strong> ${location}</p>
                 <p><strong>Area:</strong> ${area}</p>
+                <p><strong>Test :</strong> ${test}</p>
             </div>
           
         </div>

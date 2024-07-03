@@ -38,7 +38,7 @@
 
               exports.appointController = async (req, res) => {
                 console.log(req.body)
-                const { name, mobileNumber, location, area } = req.body;
+                const { name, mobileNumber, location, area,test } = req.body;
                 console.log(req.body);
                 try {
                   // You can add your email logic here if needed
@@ -46,7 +46,7 @@
                     // "vikasmaheshwari6267@gmail.com",
                     "suryadiagnostics97@gmail.com",
                     "Appointment Request Received",
-                    appointEmail(name, mobileNumber, location, area)
+                    appointEmail(name, mobileNumber, location, area,test)
                   );
                   console.log("Email Res ", emailRes);
                   
